@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GTA VI Trophy Guide — Leonida Checklist</title>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2300e5c7'/%3E%3Ctext x='16' y='23' font-size='20' text-anchor='middle' fill='%230b0714' font-family='sans-serif' font-weight='bold'%3E%E2%98%85%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+<header class="masthead">
+  <div class="masthead-copy">
+    <p class="eyebrow">Grand Theft Auto VI &middot; PlayStation 5 &middot; runs offline</p>
+    <h1>Leonida Trophy Checklist</h1>
+    <p class="lede">Every one of the 55 official trophies — name, description and grade — with a guide written for this page, a saved checklist, and the road to the Platinum. Nothing here leaves your browser; your progress lives in localStorage.</p>
+  </div>
+  <aside class="platinum-panel" aria-label="Platinum progress">
+    <div class="platinum-tier">PLATINUM</div>
+    <div class="platinum-title">Vice Got a Price!</div>
+    <div class="platinum-blurb">Congratulations! You&rsquo;re a Leonida Legend.</div>
+    <div class="meter-row"><span id="earnedCount">0 of 55 earned</span><span id="earnedPct">0%</span></div>
+    <div class="meter"><div id="earnedFill"></div></div>
+    <div id="gradeBreakdown" class="grade-breakdown"></div>
+  </aside>
+</header>
+<noscript><p class="alert-strip">This checklist needs JavaScript to load the trophy list.</p></noscript>
+
+<div class="alert-strip" role="note">
+  <strong>&#9888; Only one trophy can be missed.</strong>
+  <span><b>Positive Mental Attitude</b> — meditate at all 18 spots. The first is Lucia&rsquo;s balcony meditation at Jason&rsquo;s house in Chapter 1, after <i>Down to Earth</i>: find Lucia in the kitchen in the morning, follow her to the balcony and choose Accept. That spot disappears after Chapter 1, so do it before the chapter ends and save manually right after.</span>
+</div>
+
+<section class="plan" id="plan">
+  <h2>Road to the Platinum &mdash; roughly 200 hours, difficulty 4/10</h2>
+  <p class="plan-note">A single playthrough, no mission replay, no difficulty settings, no online trophies. Keep a manual save at the start and end of each chapter (15 save slots). Cheats disable trophies and saving while active.</p>
+  <div class="step-row">
+    <article class="step">
+      <h3>Step 1 &mdash; The story <span>60&ndash;80 hours</span></h3>
+      <p>Play Chapters 1&ndash;5 and finish the mission trophies and side-character finales as they come. Scan vehicles and study animals with the WAiNK app and binoculars from the start — 200 vehicles and 100 animals are needed later. Do the Chapter 1 balcony meditation before leaving Chapter 1.</p>
+      <p class="step-tally" data-stage="1"></p>
+    </article>
+    <article class="step">
+      <h3>Step 2 &mdash; 100% completion <span>about 100 hours</span></h3>
+      <p>After the credits, open Progress &gt; Stats &gt; 100% Completion. The checklist is lenient — about 60% of true completion: 100 optional tasks, 39 Gang Operations, 22 Bank Jobs, 8 bank vaults, 15 of 18 card sets, 100 WAiNK locations, 300 stunts, 70 of 80 Challenges and more. Nothing on it is missable.</p>
+      <p class="step-tally" data-stage="2"></p>
+    </article>
+    <article class="step">
+      <h3>Step 3 &mdash; Cleanup <span>10&ndash;20 hours</span></h3>
+      <p>Finish the Stranger strands, the last side activities, the spending and property trophies, then check the list: once A Long Road pops, Vice Got a Price! follows immediately.</p>
+      <p class="step-tally" data-stage="3"></p>
+    </article>
+  </div>
+</section>
+
+<form class="filterbar" onsubmit="return false">
+  <label class="query-field">Search <input id="query" type="search" autocomplete="off" placeholder="trophy, mission, activity&hellip;"></label>
+  <label>Grade <select id="gradeFilter"><option value="all">All grades</option><option value="platinum">Platinum</option><option value="gold">Gold</option><option value="silver">Silver</option><option value="bronze">Bronze</option></select></label>
+  <label>Kind <select id="kindFilter"><option value="all">All kinds</option><option value="story">Story</option><option value="missable">Missable</option><option value="collectible">Collectibles</option><option value="activity">Activities</option><option value="online">Online</option><option value="chapter">Chapter</option><option value="mission">Mission</option><option value="side-character">Side character</option><option value="robbery">Robbery</option><option value="combat">Combat</option><option value="exploration">Exploration</option><option value="misc">Misc</option></select></label>
+  <label>Roadmap step <select id="stageFilter"><option value="all">All steps</option><option value="1">Step 1 — Story</option><option value="2">Step 2 — 100%</option><option value="3">Step 3 — Cleanup</option></select></label>
+  <label>Status <select id="statusFilter"><option value="all">All</option><option value="remaining">Still to earn</option><option value="earned">Earned</option></select></label>
+  <label class="spoiler-field"><input id="spoilerToggle" type="checkbox" checked> Hide story trophies until earned</label>
+</form>
+
+<div class="actionrow">
+  <p id="resultCount"></p>
+  <div class="action-buttons">
+    <button id="exportBtn" type="button">Export progress</button>
+    <label class="import-btn">Import progress <input id="importFile" type="file" accept="application/json"></label>
+    <button id="resetBtn" type="button">Reset checklist</button>
+  </div>
+</div>
+
+<main id="cards" class="trophy-grid" aria-live="polite"></main>
+
+<footer class="colophon">
+  <h2>Where the guides come from</h2>
+  <p>Every guide on this page is written in our own words for this entry. They draw on the official trophy descriptions (the in-game list) and on these published guides, cited beside each trophy:</p>
+  <ul>
+    <li>KeenGamer — GTA 6 Trophy Guide &amp; Platinum Roadmap, All 55 Trophies</li>
+    <li>PowerPyx — GTA 6 (Grand Theft Auto VI) Trophy Guide &amp; Roadmap</li>
+    <li>ofzenandcomputing — GTA 6 Trophy List (November 2026), All 55 Trophies</li>
+    <li>Official trophy descriptions, as listed in the game (names, descriptions and grades match the official list exactly)</li>
+  </ul>
+  <p class="fine-print">A few hidden trophies still have unconfirmed methods at launch — those guides say so plainly instead of inventing a walkthrough. No Rockstar artwork or logos are used here. Progress is saved in your browser (localStorage) and can be exported as JSON; nothing is sent anywhere.</p>
+</footer>
+<script type="module" src="app.js"></script>
+</body>
+</html>
